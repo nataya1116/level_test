@@ -19,16 +19,15 @@
     }
 
     function isPalindromRecursiveHelper(word, beginPos, endPos) {
-        let isPalindrom = true;
-        let j = endPos;
-        for (let i = 0; i <= endPos; i++) {
-            if(word[i] != word[j]){
-                isPalindrom = false;
-                break;
+        if (endPos > 0){
+            if (word[beginPos] != word[endPos]){
+                return false;
+            }else{
+                return isPalindromRecursiveHelper(word, beginPos + 1, endPos - 1);
             }
-            j--;
+        } else {
+            return true;
         }
-        return isPalindrom;
     }
     console.log(isPalindromRecursive("appleelppa")); // true
     console.log(isPalindromRecursive("appleelppp")); // false
