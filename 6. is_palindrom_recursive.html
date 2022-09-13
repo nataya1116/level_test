@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function isPalindromRecursive(word) {
+    
+        const beginPos = 0;
+        const endPos = word.length - 1;
+
+        return isPalindromRecursiveHelper(word, beginPos, endPos);
+    }
+
+    function isPalindromRecursiveHelper(word, beginPos, endPos) {
+        let isPalindrom = true;
+        let j = endPos;
+        for (let i = 0; i <= endPos; i++) {
+            if(word[i] != word[j]){
+                isPalindrom = false;
+                break;
+            }
+            j--;
+        }
+        return isPalindrom;
+    }
+    console.log(isPalindromRecursive("appleelppa")); // true
+    console.log(isPalindromRecursive("appleelppp")); // false
+</script>
+</html>
