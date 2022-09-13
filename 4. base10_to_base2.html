@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function base10ToBase2String(n) {
+
+        if(n > 1){
+            const remainder = n % 2;
+            n = Math.floor(n / 2);
+            return  base10ToBase2String(n) + base10ToBase2StringHelper(remainder);
+        }
+        else {
+            return n;
+        }
+        
+    }
+
+    function base10ToBase2StringHelper(n) {
+        return n + "";
+    }
+
+    console.log(base10ToBase2String(100)); // 1100100
+    console.log(base10ToBase2String(110)); // 1101110
+
+</script>
+</html>
